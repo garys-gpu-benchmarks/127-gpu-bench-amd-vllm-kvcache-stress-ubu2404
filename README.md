@@ -91,16 +91,16 @@ Starts python -m vllm.entrypoints.openai.api_server with mistralai/Mistral-7B-v0
 
 - Validates decode throughput, TTFT, TPOT, and KV-cache occupancy from the real vLLM OpenAI server. Every profile starts python -m vllm.entrypoints.openai.api_server
 - #1: Decode throughput, tokens/s (output_tokens_per_sec); is present and physically sensible.
-- #2: Time To First Token, ms (ttft_msec); is present and physically sensible.
-- #3: TPOT, ms (tpot_msec); is present and physically sensible.
+- #2: Time To First Token p50, ms (ttft_msec); is present and physically sensible.
+- #3: TPOT p50, ms (tpot_msec); is present and physically sensible.
 - #4: Peak KV-cache usage, GiB (kv_cache_peak_gb); is present and physically sensible.
 - #5: KV-cache usage peak, pct (kv_cache_usage_peak_pct) is present and physically sensible.
 
 ## 3. Metrics Captured
 
 - **#1: Decode throughput, tokens/s** — stored as `output_tokens_per_sec`.
-- **#2: Time To First Token, ms** — stored as `ttft_msec`.
-- **#3: TPOT, ms** — stored as `tpot_msec`.
+- **#2: Time To First Token p50, ms** — stored as `ttft_msec`.
+- **#3: TPOT p50, ms** — stored as `tpot_msec`.
 - **#4: Peak KV-cache usage, GiB** — stored as `kv_cache_peak_gb`.
 - **#5: KV-cache usage peak, pct** — stored as `kv_cache_usage_peak_pct`.
 
@@ -192,7 +192,7 @@ Expected ranges and gates live in `config/benchmark_config.yaml` under `baseline
 Create cannot finish without `scripts/collect_workload.py`.
 
 **`self_check` overlay rewritten**
-Do not overwrite files listed in `results/overlay_lock.json`.
+`Locked overlay rewritten` means the sibling file and the `sha256` in `results/overlay_lock.json` disagree. The repair is to make `implementation_components/<component-id>/files/<path>`, the sibling path, and that digest the same bytes, then recheck with `create_one_workload.py --validate-only`. Do not replace the overlay with a new collector, and do not regenerate a non-empty sibling.
 
 **Remote SSH drop during setup**
 Reconnect and resume `bash setup.sh --assume-yes`. Do not wipe `.venv` or `.cache`.

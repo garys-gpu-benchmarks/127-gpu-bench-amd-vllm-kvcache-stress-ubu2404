@@ -35,8 +35,8 @@ sample_index,status,sustained_decode_throughput_under_cache_pressure_tokens_s,ti
 ## Metrics
 
 - **#1: Decode throughput, tokens/s** — stored as `output_tokens_per_sec`.
-- **#2: Time To First Token, ms** — stored as `ttft_msec`.
-- **#3: TPOT, ms** — stored as `tpot_msec`.
+- **#2: Time To First Token p50, ms** — stored as `ttft_msec`.
+- **#3: TPOT p50, ms** — stored as `tpot_msec`.
 - **#4: Peak KV-cache usage, GiB** — stored as `kv_cache_peak_gb`.
 - **#5: KV-cache usage peak, pct** — stored as `kv_cache_usage_peak_pct`.
 
