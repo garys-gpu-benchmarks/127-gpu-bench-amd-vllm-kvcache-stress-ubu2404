@@ -25,6 +25,11 @@
     "value": "gpu-bench-amd-vllm-kvcache-stress-ubu2404"
   },
   {
+    "field_name": "Repo Directory Name",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "127-gpu-bench-amd-vllm-kvcache-stress-ubu2404"
+  },
+  {
     "field_name": "Main Goal",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "Analyze LLM KV-cache stress under long contexts"
