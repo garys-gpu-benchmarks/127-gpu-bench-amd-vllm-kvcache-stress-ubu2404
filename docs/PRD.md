@@ -21,7 +21,7 @@ Start python -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-7B-
 Analyze LLM KV-cache stress under long contexts
 
 ## Validation Objective
-Validates decode throughput, TTFT, TPOT, and KV-cache occupancy from the real vLLM OpenAI server. Every profile starts python -m vllm.entrypoints.openai.api_server
+Validates decode throughput, TTFT, TPOT, and KV-cache occupancy from the real vLLM server
 
 ## Workload Category
 LLM Inference & Serving

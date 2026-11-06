@@ -140,6 +140,16 @@
     "value": "-"
   },
   {
+    "field_name": "Validation Objective",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Validates decode throughput, TTFT, TPOT, and KV-cache occupancy from the real vLLM server"
+  },
+  {
+    "field_name": "Command Tools Executed",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Start python -m vllm.entrypoints.openai.api_server on port 8000, then run scripts/benchmark_serving.py"
+  },
+  {
     "field_name": "run_benchmark Command Plus Options for Smoke Run (One minute or less)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "bash run_benchmark.sh --smoke --validate --model-name mistralai/Mistral-7B-v0.3 --dtype bfloat16 --kv-cache-dtype auto --gpu-memory-utilization 0.9 --max-model-len 128 --input-len 64 --output-len 16 --num-prompts 2 --concurrency 2 --seed 0"
@@ -153,16 +163,6 @@
     "field_name": "run_benchmark Command Plus Options for Extended Run (8 to 15 minutes)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "bash run_benchmark.sh --extended --validate --model-name mistralai/Mistral-7B-v0.3 --dtype bfloat16 --kv-cache-dtype auto --gpu-memory-utilization 0.9 --max-model-len 8192 --input-len 4096 --output-len 256 --num-prompts 800 --concurrency 8 --seed 0"
-  },
-  {
-    "field_name": "Validation Objective",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Validates decode throughput, TTFT, TPOT, and KV-cache occupancy from the real vLLM OpenAI server. Every profile starts python -m vllm.entrypoints.openai.api_server"
-  },
-  {
-    "field_name": "Command Tools Executed",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Start python -m vllm.entrypoints.openai.api_server on port 8000, then run scripts/benchmark_serving.py"
   },
   {
     "field_name": "Command Execution Details and Purpose",
@@ -412,7 +412,7 @@
   {
     "field_name": "Profile Parameter Values",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Parameters_SmokeBaselineExtend",
-    "value": "{\"model_name\": {\"smoke\": \"mistralai/Mistral-7B-v0.3\", \"baseline\": \"mistralai/Mistral-7B-v0.3\", \"extended\": \"mistralai/Mistral-7B-v0.3\", \"notes\": \"\"}, \"dtype\": {\"smoke\": \"bfloat16\", \"baseline\": \"bfloat16\", \"extended\": \"bfloat16\", \"notes\": \"\"}, \"kv_cache_dtype\": {\"smoke\": \"auto\", \"baseline\": \"auto\", \"extended\": \"auto\", \"notes\": \"\"}, \"gpu_memory_utilization\": {\"smoke\": \"0.9\", \"baseline\": \"0.9\", \"extended\": \"0.9\", \"notes\": \"\"}, \"max_model_len\": {\"smoke\": \"128\", \"baseline\": \"8192\", \"extended\": \"8192\", \"notes\": \"\"}, \"input_len\": {\"smoke\": \"64\", \"baseline\": \"4096\", \"extended\": \"4096\", \"notes\": \"\"}, \"output_len\": {\"smoke\": \"16\", \"baseline\": \"256\", \"extended\": \"256\", \"notes\": \"\"}, \"num_prompts\": {\"smoke\": \"2\", \"baseline\": \"200\", \"extended\": \"800\", \"notes\": \"VM 2026-08-16 tiny_kv_server num_prompts=72000 output_len=256 -> 205s (3:25). Extended 211000 ~10:00, not tested. Retimed 2026-08-17 toward 3-4 min baseline; extended scaled by the same factor. | 2026-09-28 GARY_LEDGER (aggregated_runtime_ledgers_101_201_301_401_20260928_9am; targets baseline 3-5 min, extended 8-15 min): 397/1320 -> 200/800. baseline 397 measured 6:14/7:14, extended 1320 measured 18:58/18:59. Two-point fit ~0.80 s/prompt + ~88 s server start. 200/800 targets ~4:05 / ~12:05. Unconfirmed by a fresh run.\"}, \"concurrency\": {\"smoke\": \"2\", \"baseline\": \"8\", \"extended\": \"8\", \"notes\": \"\"}, \"seed\": {\"smoke\": \"0\", \"baseline\": \"0\", \"extended\": \"0\", \"notes\": \"\"}}"
+    "value": "{\"model_name\": {\"smoke\": \"mistralai/Mistral-7B-v0.3\", \"baseline\": \"mistralai/Mistral-7B-v0.3\", \"extended\": \"mistralai/Mistral-7B-v0.3\"}, \"dtype\": {\"smoke\": \"bfloat16\", \"baseline\": \"bfloat16\", \"extended\": \"bfloat16\"}, \"kv_cache_dtype\": {\"smoke\": \"auto\", \"baseline\": \"auto\", \"extended\": \"auto\"}, \"gpu_memory_utilization\": {\"smoke\": \"0.9\", \"baseline\": \"0.9\", \"extended\": \"0.9\"}, \"max_model_len\": {\"smoke\": \"128\", \"baseline\": \"8192\", \"extended\": \"8192\"}, \"input_len\": {\"smoke\": \"64\", \"baseline\": \"4096\", \"extended\": \"4096\"}, \"output_len\": {\"smoke\": \"16\", \"baseline\": \"256\", \"extended\": \"256\"}, \"num_prompts\": {\"smoke\": \"2\", \"baseline\": \"200\", \"extended\": \"800\"}, \"concurrency\": {\"smoke\": \"2\", \"baseline\": \"8\", \"extended\": \"8\"}, \"seed\": {\"smoke\": \"0\", \"baseline\": \"0\", \"extended\": \"0\"}}"
   },
   {
     "field_name": "Profile Command Authorship",
