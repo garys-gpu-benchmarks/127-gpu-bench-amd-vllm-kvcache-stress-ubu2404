@@ -31,14 +31,24 @@ Profiles (default: --smoke):
   --extended                    Run extended profile
 
 Parameters (override the profile's value):
-  --model-name <value>          Model or weights identifier to load (smoke/baseline/extended: mistralai/Mistral-7B-v0.3)
-  --dtype <value>               Tensor, element, or storage data type (smoke/baseline/extended: bfloat16)
+  --model-name <value>          Model or weights identifier to load
+                                  all profiles: mistralai/Mistral-7B-v0.3
+  --dtype <value>               Tensor, element, or storage data type
+                                  all profiles: bfloat16
   --kv-cache-dtype <value>      Shared workload parameter (smoke/baseline/extended: auto)
-  --gpu-memory-utilization <n>  Fraction of GPU memory the runtime may use (smoke/baseline/extended: 0.9)
+  --gpu-memory-utilization <n>  Fraction of GPU memory the runtime may use
+                                  all profiles: 0.9
   --max-model-len <value>       Shared workload parameter (smoke 128, baseline 8192, extended 8192)
-  --input-len <n>               Input or prompt token length (smoke 64, baseline 4096, extended 4096)
-  --output-len <n>              Number of generated or output tokens (smoke 16, baseline 256, extended 256)
-  --num-prompts <n>             Total prompts or requests submitted (smoke 2, baseline 200, extended 800)
+  --input-len <n>               Input or prompt token length
+                                  smoke:             64
+                                  baseline/extended: 4096
+  --output-len <n>              Number of generated or output tokens
+                                  smoke:             16
+                                  baseline/extended: 256
+  --num-prompts <n>             Total prompts or requests submitted
+                                  smoke:    2
+                                  baseline: 200
+                                  extended: 800
   --concurrency <value>         Shared workload parameter (smoke 2, baseline 8, extended 8)
   --seed <n>                    Random seed used for reproducibility (smoke/baseline/extended: 0)
 
