@@ -205,14 +205,14 @@
     "value": "MI300X"
   },
   {
-    "field_name": "Raw Output Format",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "raw_results.csv written twice with the same serving summary, plus a short concurrency text log"
-  },
-  {
     "field_name": "Primary Record Granularity",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "one serving summary, written as two identical samples"
+  },
+  {
+    "field_name": "Raw Output Format",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "raw_results.csv written twice with the same serving summary, plus a short concurrency text log"
   },
   {
     "field_name": "Raw Output Example",
@@ -225,14 +225,14 @@
     "value": "sustained_decode_throughput_under_cache_pressure_tokens_s, time_to_first_token_ms, time_per_output_token_under_high_kv_pressure_ms, kv_cache_hbm_usage_gb, kv_cache_hbm_capacity_utilization. The same values are also written as output_tokens_per_sec, ttft_msec, tpot_msec, kv_cache_peak_gb, kv_cache_usage_peak_pct"
   },
   {
-    "field_name": "Success Criteria",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "The API server accepts the requests, raw_results.csv has status=ok, and validation gates pass"
-  },
-  {
     "field_name": "Parser and Normalization Notes",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "Parse raw_results.csv. The same summary is written twice. dtype defaults to bfloat16. A missing /metrics KV sample is na (server reported no KV-cache usage); a percent without a byte count is na (server reported a percent and no byte count)"
+  },
+  {
+    "field_name": "Success Criteria",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "The API server accepts the requests, raw_results.csv has status=ok, and validation gates pass"
   },
   {
     "field_name": "Hardware Config",
