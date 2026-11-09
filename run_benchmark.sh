@@ -17,7 +17,6 @@ MISTRAL_NATIVE_MAX_MODEL_LEN="${MISTRAL_NATIVE_MAX_MODEL_LEN:-32768}"
 
 usage() {
   cat <<'USAGE'
-
 Usage: bash run_benchmark.sh [OPTIONS]
 
 Workload Name:          KV Cache Stress Test
